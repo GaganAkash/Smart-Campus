@@ -155,7 +155,3 @@ This is an academic project for MCA 1st semester. For improvements:
 ## License
 
 This project is for educational purposes only.
-
-## Support
-
-For issues or questions, please check the code comments or contact the developer.
