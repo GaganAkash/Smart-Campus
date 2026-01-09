@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost & Found - Smart Campus Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1>Smart Campus Companion</h1>
+                <div class="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="timetable.html">Timetable</a>
+                    <a href="assignments.html">Assignments</a>
+                    <a href="announcements.html">Announcements</a>
+                    <a href="lostfound.html" class="active">Lost & Found</a>
+                    <a href="forum.html">Forum</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="php/logout.php">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h2>Lost & Found Board</h2>
+                <button id="addItemBtn" class="btn-primary">Post New Item</button>
+            </div>
+
+            <!-- Add Item Form (hidden by default) -->
+            <div id="itemForm" class="form-container" style="display: none;">
+                <h3 id="formTitle">Post Lost/Found Item</h3>
+                <form id="itemEntryForm">
+                    <div class="form-group">
+                        <label for="itemType">Type:</label>
+                        <select id="itemType" name="type" required>
+                            <option value="">Select Type</option>
+                            <option value="lost">Lost</option>
+                            <option value="found">Found</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemName">Item Name:</label>
+                        <input type="text" id="itemName" name="item_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemDescription">Description:</label>
+                        <textarea id="itemDescription" name="description" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactDetails">Contact Details:</label>
+                        <input type="text" id="contactDetails" name="contact_details" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Post Item</button>
+                        <button type="button" id="cancelItemBtn" class="btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Filter and Search -->
+            <div class="filter-section">
+                <div class="filter-controls">
+                    <label for="filterType">Filter by:</label>
+                    <select id="filterType">
+                        <option value="all">All Items</option>
+                        <option value="lost">Lost Items</option>
+                        <option value="found">Found Items</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Search items...">
+                </div>
+            </div>
+
+            <!-- Items Display -->
+            <div class="items-container">
+                <div id="itemsDisplay">
+                    <p>Loading items...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Smart Campus Companion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/lostfound.js"></script>
+</body>
+</html>

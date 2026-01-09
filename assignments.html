@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments - Smart Campus Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1>Smart Campus Companion</h1>
+                <div class="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="timetable.html">Timetable</a>
+                    <a href="assignments.html" class="active">Assignments</a>
+                    <a href="announcements.html">Announcements</a>
+                    <a href="lostfound.html">Lost & Found</a>
+                    <a href="forum.html">Forum</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="php/logout.php">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h2>Assignment Tracker</h2>
+                <button id="addAssignmentBtn" class="btn-primary">Add New Assignment</button>
+            </div>
+
+            <!-- Add/Edit Form (hidden by default) -->
+            <div id="assignmentForm" class="form-container" style="display: none;">
+                <h3 id="formTitle">Add Assignment</h3>
+                <form id="assignmentEntryForm">
+                    <input type="hidden" id="assignmentId" name="id">
+
+                    <div class="form-group">
+                        <label for="assignmentSubject">Subject:</label>
+                        <input type="text" id="assignmentSubject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignmentDescription">Description:</label>
+                        <textarea id="assignmentDescription" name="description" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dueDate">Due Date:</label>
+                        <input type="date" id="dueDate" name="due_date" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Save</button>
+                        <button type="button" id="cancelAssignmentBtn" class="btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Assignments Display -->
+            <div class="assignments-container">
+                <div id="assignmentsDisplay">
+                    <p>Loading assignments...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Smart Campus Companion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/assignments.js"></script>
+</body>
+</html>

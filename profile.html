@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Smart Campus Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1>Smart Campus Companion</h1>
+                <div class="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="timetable.html">Timetable</a>
+                    <a href="assignments.html">Assignments</a>
+                    <a href="announcements.html">Announcements</a>
+                    <a href="lostfound.html">Lost & Found</a>
+                    <a href="forum.html">Forum</a>
+                    <a href="profile.html" class="active">Profile</a>
+                    <a href="php/logout.php">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h2>My Profile</h2>
+            </div>
+
+            <!-- Profile Information -->
+            <div class="profile-container">
+                <div class="profile-section">
+                    <h3>Personal Information</h3>
+                    <div id="profileInfo">
+                        <p>Loading profile information...</p>
+                    </div>
+                    <button id="editProfileBtn" class="btn-secondary">Edit Profile</button>
+                </div>
+
+                <div class="profile-section">
+                    <h3>Change Password</h3>
+                    <form id="changePasswordForm">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password:</label>
+                            <input type="password" id="currentPassword" name="current_password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newPassword">New Password:</label>
+                            <input type="password" id="newPassword" name="new_password" required minlength="6">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmNewPassword">Confirm New Password:</label>
+                            <input type="password" id="confirmNewPassword" name="confirm_password" required minlength="6">
+                        </div>
+
+                        <button type="submit" class="btn-primary">Change Password</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Edit Profile Form (hidden by default) -->
+            <div id="editProfileForm" class="form-container" style="display: none;">
+                <h3>Edit Profile</h3>
+                <form id="profileUpdateForm">
+                    <div class="form-group">
+                        <label for="editName">Full Name:</label>
+                        <input type="text" id="editName" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editUsn">USN/Roll Number:</label>
+                        <input type="text" id="editUsn" name="usn" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editEmail">Email:</label>
+                        <input type="email" id="editEmail" name="email" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Update Profile</button>
+                        <button type="button" id="cancelEditBtn" class="btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Smart Campus Companion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

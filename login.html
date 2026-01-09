@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Smart Campus Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1>Smart Campus Companion</h1>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="register.html">Register</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="form-container">
+                <h2>Login</h2>
+
+                <!-- Display messages -->
+                <div id="message" class="message" style="display: none;"></div>
+
+                <form id="loginForm" action="php/login.php" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+
+                <p>Don't have an account? <a href="register.html">Register here</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Smart Campus Companion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Display URL parameters as messages
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        const message = urlParams.get('message');
+
+        if (error) {
+            document.getElementById('message').textContent = error;
+            document.getElementById('message').className = 'message error';
+            document.getElementById('message').style.display = 'block';
+        } else if (message) {
+            document.getElementById('message').textContent = message;
+            document.getElementById('message').className = 'message success';
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

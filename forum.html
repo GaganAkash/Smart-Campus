@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - Smart Campus Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1>Smart Campus Companion</h1>
+                <div class="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="timetable.html">Timetable</a>
+                    <a href="assignments.html">Assignments</a>
+                    <a href="announcements.html">Announcements</a>
+                    <a href="lostfound.html">Lost & Found</a>
+                    <a href="forum.html" class="active">Forum</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="php/logout.php">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h2>Anonymous Doubt Forum</h2>
+                <button id="askQuestionBtn" class="btn-primary">Ask a Question</button>
+            </div>
+
+            <!-- Ask Question Form (hidden by default) -->
+            <div id="questionForm" class="form-container" style="display: none;">
+                <h3>Ask Your Question</h3>
+                <form id="questionEntryForm">
+                    <div class="form-group">
+                        <label for="question">Your Question:</label>
+                        <textarea id="question" name="question" rows="6" placeholder="Ask your question here..." required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Post Question</button>
+                        <button type="button" id="cancelQuestionBtn" class="btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Questions Display -->
+            <div class="forum-container">
+                <div id="questionsDisplay">
+                    <p>Loading questions...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Smart Campus Companion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/forum.js"></script>
+</body>
+</html>
